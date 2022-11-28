@@ -18,6 +18,9 @@ const app = express();
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
 
+//Authentication config File
+require("./config/auth.config")(app);
+
 // default value for title local
 const capitalize = require("./utils/capitalize");
 const projectName = "Strive";

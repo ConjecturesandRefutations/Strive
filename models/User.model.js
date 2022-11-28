@@ -8,7 +8,8 @@ const userSchema = new Schema(
     totalTimeExercising: Number,
     favoriteActivites: { type: String, enum: ['run', 'bike', 'swim', 'walk', 'other'] },
     shoes: [String],
-    bikes: [String]
+    bikes: [String],
+    posts: [{ type: Schema.Types.ObjectId, ref: 'Post' }]
   },
     {
       username: {

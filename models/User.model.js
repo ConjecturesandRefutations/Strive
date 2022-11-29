@@ -4,8 +4,6 @@ const userSchema = new Schema(
   {
     name: String,
     age: Number,
-    totalActivities: Number,
-    totalTimeExercising: Number,
     favoriteActivites: { type: String, enum: ['run', 'bike', 'swim', 'walk', 'other'] },
     shoes: [String],
     bikes: [String],

@@ -34,6 +34,9 @@ app.use("/", indexRoutes);
 const myActivitiesRoutes = require("./routes/myActivities.routes");
 app.use("/myactivities", myActivitiesRoutes);
 
+const createActivity = require("./routes/createActivity.routes");
+app.use("/createActivity", createActivity);
+
 const registerRoutes = require("./routes/auth/register.routes");
 app.use("/register", registerRoutes);
 

@@ -40,9 +40,11 @@ app.use("/", registerRoutes);
 const createActivity = require("./routes/createActivity.routes");
 app.use("/createActivity", createActivity);
 
-
 const loginRoutes = require("./routes/auth/login.routes");
 app.use("/", loginRoutes);
+
+const profileView = require("./routes/profile.routes");
+app.use("/", profileView);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);

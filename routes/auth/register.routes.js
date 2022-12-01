@@ -13,12 +13,7 @@ router.post("/register" , (req, res, next) => {
 
  const { username, email, password } = req.body;
 
- // make sure users fill all mandatory fields:
- if (!username || !email || !password) {
-   res.render("auth/register", {
-     errorMessage: "All fields are mandatory. Please provide your username, email and password."
-   });
-   return;
- }})
+
+ })
 
 module.exports = router;

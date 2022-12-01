@@ -1,9 +1,26 @@
 const express = require("express");
 const router = express.Router();
 
+const app = express()
+
 /* GET login page */
-router.get("/", (req, res, next) => {
+router.get("/login", (req, res, next) => {
   res.render("auth/login");
 });
+
+router.get("/login", (req, res, next) => {
+  res.render("auth/login");
+});
+
+router.post("/login", (req, res, next) => {
+  const { username, email, password } = req.body;
+  console.log(req.body)
+
+  //check if we have all info
+  if (!username || !email || !password) {
+    res.render("auth/login", { err: "please fill out all information" });
+    return;
+  }})
+
 
 module.exports = router;

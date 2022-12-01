@@ -740,18 +740,6 @@ select {
   position: absolute;
 }
 
-.relative {
-  position: relative;
-}
-
-.top-0 {
-  top: 0px;
-}
-
-.top-4 {
-  top: 1rem;
-}
-
 .left-4 {
   left: 1rem;
 }
@@ -760,9 +748,27 @@ select {
   top: 0.5rem;
 }
 
+.top-0 {
+  top: 0px;
+}
+
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
+
 .mx-10 {
   margin-left: 2.5rem;
   margin-right: 2.5rem;
+}
+
+.mx-6 {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .mt-8 {
@@ -781,14 +787,6 @@ select {
   margin-top: 0.25rem;
 }
 
-.mt-auto {
-  margin-top: auto;
-}
-
-.mt-64 {
-  margin-top: 16rem;
-}
-
 .mt-32 {
   margin-top: 8rem;
 }
@@ -803,6 +801,10 @@ select {
 
 .inline-flex {
   display: inline-flex;
+}
+
+.grid {
+  display: grid;
 }
 
 .h-16 {
@@ -833,8 +835,12 @@ select {
   width: 75%;
 }
 
-.w-98 {
-  width: 28rem;
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -843,6 +849,10 @@ select {
 
 .items-center {
   align-items: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
 }
 
 .justify-center {
@@ -857,6 +867,10 @@ select {
   gap: 0.5rem;
 }
 
+.gap-4 {
+  gap: 1rem;
+}
+
 .self-start {
   align-self: flex-start;
 }
@@ -867,6 +881,14 @@ select {
 
 .rounded-md {
   border-radius: 0.375rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
 }
 
 .border {
@@ -892,21 +914,13 @@ select {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-.bg-inherit {
-  background-color: inherit;
-}
-
-.bg-top {
-  background-position: top;
-}
-
-.bg-bottom {
-  background-position: bottom;
-}
-
 .object-cover {
   -o-object-fit: cover;
   object-fit: cover;
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .py-2 {
@@ -923,14 +937,6 @@ select {
   padding-top: 1.5rem;
 }
 
-.pl-8 {
-  padding-left: 2rem;
-}
-
-.pl-4 {
-  padding-left: 1rem;
-}
-
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -944,6 +950,11 @@ select {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .font-bold {
@@ -1011,14 +1022,6 @@ select {
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow-md {
-  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),
-    0 2px 4px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 .hover\:bg-custom-blue-600:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(0 104 184 / var(--tw-bg-opacity));
@@ -1027,6 +1030,11 @@ select {
 .focus\:border-custom-blue-500:focus {
   --tw-border-opacity: 1;
   border-color: rgb(3 144 252 / var(--tw-border-opacity));
+}
+
+.focus\:border-indigo-500:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(99 102 241 / var(--tw-border-opacity));
 }
 
 .focus\:outline-none:focus {
@@ -1046,6 +1054,11 @@ select {
 .focus\:ring-custom-blue-500:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(3 144 252 / var(--tw-ring-opacity));
+}
+
+.focus\:ring-indigo-500:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(99 102 241 / var(--tw-ring-opacity));
 }
 
 .focus\:ring-offset-2:focus {

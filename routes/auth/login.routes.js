@@ -22,7 +22,7 @@ router.post("/login", (req, res, next) => {
       console.log("🚨 Cant find the user");
       res.render("./auth/login");
     } else if (bcrypt.compareSync(password, user.password)) {
-      res.render("users/profile");
+      res.redirect("/profile");
     } else {
       res.render("./auth/login");
     }

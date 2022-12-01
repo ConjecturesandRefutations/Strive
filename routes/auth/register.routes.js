@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../../models/User.model");
+const bcrypt = require("bcrypt");
+const saltRounds = 10;
 
 /* GET register page */
 router.get("/register", (req, res, next) => {
@@ -9,15 +11,19 @@ router.get("/register", (req, res, next) => {
 
 /* POST register page*/
 
-router.post("/register", (req, res, next) => {
-  console.log("The form data: ", req.body);
-
+router.post("/register", async (req, res, next) => {
   const { username, email, password } = req.body;
-  User.create({ username: username, email: email, password: password }).then(
-    (result) => {
+
+  //Hashin user password
+  const hashPassword = await bcrypt.hash(password, saltRounds);
+
+  User.create({ username: username, email: email, password: hashPassword })
+    .then((result) => {
       console.log("🧑🏻‍💻New user has been created");
-    }
-  );
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 module.exports = router;

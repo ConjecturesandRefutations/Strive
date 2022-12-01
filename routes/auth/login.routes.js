@@ -13,11 +13,11 @@ router.get("/login", (req, res, next) => {
 });
 
 router.post("/login", (req, res, next) => {
-  const { username, email, password } = req.body;
+  const { username, password } = req.body;
   console.log(req.body)
 
   //check if we have all info
-  if (!username || !email || !password) {
+  if (!username || !password) {
     res.render("auth/login", { err: "please fill out all information" });
     return;
   }})

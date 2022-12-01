@@ -34,8 +34,8 @@ app.use("/", indexRoutes);
 const myActivitiesRoutes = require("./routes/myActivities.routes");
 app.use("/myactivities", myActivitiesRoutes);
 
-const registerRoutes = require("./routes/auth/register.routes"); 
-app.use("/", registerRoutes); 
+const registerRoutes = require("./routes/auth/register.routes");
+app.use("/", registerRoutes);
 
 const createActivity = require("./routes/createActivity.routes");
 app.use("/createActivity", createActivity);
@@ -45,6 +45,10 @@ app.use("/", loginRoutes);
 
 const profileView = require("./routes/profile.routes");
 app.use("/", profileView);
+
+//Partials
+hbs.registerPartials("./views/partials");
+console.log(__dirname);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);

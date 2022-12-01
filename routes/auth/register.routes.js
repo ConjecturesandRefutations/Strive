@@ -19,7 +19,7 @@ router.post("/register", async (req, res, next) => {
 
   User.create({ username: username, email: email, password: hashPassword })
     .then((result) => {
-      res.render("/users/profile");
+      res.render("users/profile");
       console.log("🧑🏻‍💻New user has been created");
     })
     .catch((err) => {

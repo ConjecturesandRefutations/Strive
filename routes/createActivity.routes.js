@@ -1,7 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res, next) => {
+const { isLoggedIn, isLoggedOut } = require("../middleware/route-guard");
+
+
+router.get("/",  isLoggedIn,  (req, res, next) => {
   res.render("createActivity");
 });
 

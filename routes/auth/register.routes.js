@@ -4,14 +4,16 @@ const User = require("../../models/User.model");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
+const { isLoggedIn, isLoggedOut } = require("../../middleware/route-guard");
+
 /* GET register page */
-router.get("/register", (req, res, next) => {
+router.get("/register", isLoggedOut, (req, res, next) => {
   res.render("auth/register");
 });
 
 /* POST register page*/
 
-router.post("/register", async (req, res, next) => {
+router.post("/register", isLoggedOut, async (req, res, next) => {
   const { username, email, password } = req.body;
 
   //Hashin user password
@@ -19,6 +21,7 @@ router.post("/register", async (req, res, next) => {
 
   User.create({ username: username, email: email, password: hashPassword })
     .then((result) => {
+      req.session.currentUser = result;
       res.redirect("/profile");
       console.log("🧑🏻‍💻New user has been created");
     })

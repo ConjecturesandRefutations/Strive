@@ -1,8 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
+const { isLoggedIn, isLoggedOut } = require("../middleware/route-guard");
+
 /* GET my activities page */
-router.get("/", (req, res, next) => {
+router.get("/",  isLoggedIn,  (req, res, next) => {
   res.render("myActivities");
 });
 

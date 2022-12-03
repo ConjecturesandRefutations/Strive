@@ -7,10 +7,10 @@ const isLoggedIn = (req, res, next) => {
   };
   
   // if an already logged in user tries to access the login page it
-  // redirects the user to the home page
+  // redirects the user to the profile page
   const isLoggedOut = (req, res, next) => {
     if (req.session.currentUser) {
-      return res.redirect("/");
+      return res.redirect("/profile");
     }
     next();
   };

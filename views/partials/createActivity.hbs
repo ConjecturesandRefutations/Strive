@@ -1,7 +1,11 @@
 <div class="createActivityContainer mt-4 mx-2 p-4 border rounded-2xl shadow-sm">
   <h2 class="font-bold text-custom-blue-500 text-xl">Create an activity</h2>
 
-  <form action="createActivity" method="post" class="mt-4 grid grid-cols-2 gap-4">
+  <form
+    action="createActivity"
+    method="post"
+    class="mt-4 grid grid-cols-2 gap-4"
+  >
     <div>
       <label
         for="title"
@@ -59,6 +63,12 @@
         placeholder=""
       ></textarea>
     </div>
+    <input
+      type="text"
+      style="display:none"
+      name="userId"
+      value="{{userInSession._id}}"
+    />
     <div class="col-span-2 flex w-full justify-end">
       <button
         type="submit"

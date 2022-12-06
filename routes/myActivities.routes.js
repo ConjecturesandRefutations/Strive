@@ -5,7 +5,7 @@ const User = require("../models/User.model"); //
 const { isLoggedIn, isLoggedOut } = require("../middleware/route-guard");
 
 /* GET my activities page */
-router.get('/', (req, res, next) => {
+router.get('/', isLoggedIn, (req, res, next) => {
   User.findById(req.session.currentUser)
     .populate('posts') // 
     .then(dbPosts => {

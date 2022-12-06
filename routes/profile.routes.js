@@ -5,11 +5,25 @@ const User = require("../models/User.model");
 
 const { isLoggedIn, isLoggedOut } = require("../middleware/route-guard");
 
+
+router.get('/profile', isLoggedIn, (req, res, next) => {
+  User.findById(req.session.currentUser)
+    .populate('posts') // 
+    .then(dbPosts => {
+      //console.log("Posts from the DB: ", dbPosts.posts);
+      res.render('users/profile', { posts: dbPosts.posts });
+    })
+    .catch(err => {
+      console.log(`Err while getting the posts from the DB: ${err}`);
+      next(err);
+    });
+});
+
 /* GET profile page */
-router.get("/profile", isLoggedIn, async (req, res, next) => {
-  User.findById(req.session.currentUser._id).populate('posts') 
-  .then(result => {res.render('users/profile', { posts: result.posts })}
-  )
+//router.get("/profile", isLoggedIn, async (req, res, next) => {
+  //User.findById(req.session.currentUser._id).populate('posts') 
+  //.then(result => {res.render('users/profile', { posts: result.posts })}
+  //)
  /*  console.log(req.session.currentUser);
   User.findById(req.session.currentUser._id).populate('posts') 
   .then(foundUser => {
@@ -20,7 +34,7 @@ router.get("/profile", isLoggedIn, async (req, res, next) => {
       console.log(`Err while getting the posts from the DB: ${err}`);
       next(err);
     }); */
-});
+//});
 
 module.exports = router;
 

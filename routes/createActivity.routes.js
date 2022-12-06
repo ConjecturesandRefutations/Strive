@@ -9,18 +9,18 @@ router.get("/", isLoggedIn, (req, res, next) => {
   res.render("createActivity");
 });
 
-router.post("/", (req, res, next) => {
+ router.post("/", (req, res, next) => {
   console.log(req.body);
-  const { title, distance, duration, elevation, description, userId } =
+  const { title, distance, duration, elevation, description } =
     req.body;
 
-  Post.create({ title, distance, duration, elevation, description, userId })
+  Post.create({ title, distance, duration, elevation, description })
     .then((newPost) => {
       console.log("Post Created");
-      return User.findByIdAndUpdate(userId, { $push: { posts: newPost._id } });
+      return User.findByIdAndUpdate(req.session.currentUser, { $push: { posts: newPost._id } });
     })
     .then(() => res.redirect("/profile"))
     .catch((error) => next(error));
-});
+}); 
 
 module.exports = router;

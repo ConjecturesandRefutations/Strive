@@ -2,5 +2,11 @@
 <button><a href="/createActivity">Add Activity</a></button>
 <br />
 Posts:
+{{#each posts}}
+    <li>
+        {{ this.title }}
+        
+    </li>
+  {{/each}}
 <br />
 <button><a href="/login">Logout</a></button>

@@ -5,19 +5,46 @@ const User = require("../models/User.model");
 
 const { isLoggedIn, isLoggedOut } = require("../middleware/route-guard");
 
+const distances = [];
+const elevations = [];
+const durations = [];
 
-router.get('/profile', isLoggedIn, (req, res, next) => {
+router.get("/profile", isLoggedIn, (req, res, next) => {
   User.findById(req.session.currentUser)
-    .populate('posts') // 
-    .then(dbPosts => {
+    .populate("posts") //
+    .then((user) => {
       //console.log("Posts from the DB: ", dbPosts.posts);
-      res.render('users/profile', { posts: dbPosts.posts });
+      user.posts.forEach((post) => {
+        distances.push(post.distance);
+        durations.push(post.duration);
+        elevations.push(post.elevation);
+      });
+
+      //this is not a perfect solution to find out sums but ok for demonstration
+      const sumDistance = distances.reduce((acc, curr) => {
+        return acc + curr;
+      });
+
+      const sumDurations = durations.reduce((acc, curr) => {
+        return acc + curr;
+      });
+
+      const sumElevations = elevations.reduce((acc, curr) => {
+        return acc + curr;
+      });
+
+      res.render("users/profile", {
+        posts: user.posts,
+        user: user,
+        sumDistances: sumDistance,
+        sumDurations: sumDurations,
+        sumElevations: sumElevations,
+      });
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(`Err while getting the posts from the DB: ${err}`);
       next(err);
     });
 });
 
 module.exports = router;
-

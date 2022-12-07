@@ -12,8 +12,8 @@
       <div class="flex items-center gap-4 mb-4">
         <img src="/images/user.png" class="w-12" alt="" />
         <div class="flex flex-col">
-          <span class="user-name font-bold">Anil Ozsoy</span>
-          <span class="email text-sm text-gray-400">@anilozsoy</span>
+          <span class="user-name font-bold">{{user.username}}</span>
+          <span class="email text-sm text-gray-400">@{{user.username}}</span>
         </div>
       </div>
       <div class="description text-sm mb-4 text-slate-500">
@@ -85,15 +85,15 @@
         <div class="flex justify-between gap-2">
           <div class="flex flex-col">
             <div class="text-xs text-gray-400">Distance</div>
-            <div class="text-lg">12<span class="text-xs">km</span></div>
+            <div class="text-lg">{{sumDistances}}<span class="text-xs">km</span></div>
           </div>
           <div class="flex flex-col">
             <div class="text-xs text-gray-400">Elevation</div>
-            <div class="text-lg">20<span class="text-xs">meter</span></div>
+            <div class="text-lg">{{sumElevations}}<span class="text-xs">meter</span></div>
           </div>
           <div class="flex flex-col">
             <div class="text-xs text-gray-400">Duration</div>
-            <div class="text-lg">120<span class="text-xs">min.</span></div>
+            <div class="text-lg">{{sumDurations}}<span class="text-xs">min.</span></div>
           </div>
         </div>
       </div>

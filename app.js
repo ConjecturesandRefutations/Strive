@@ -46,6 +46,9 @@ app.use("/", loginRoutes);
 const profileView = require("./routes/profile.routes");
 app.use("/", profileView);
 
+const logOut = require("./routes/auth/logout.routes");
+app.use("/", logOut);
+
 //Partials
 hbs.registerPartials("./views/partials");
 console.log(__dirname);

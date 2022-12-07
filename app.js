@@ -46,6 +46,9 @@ app.use("/", loginRoutes);
 const profileView = require("./routes/profile.routes");
 app.use("/", profileView);
 
+const editActivity = require("./routes/myActivities.routes");
+app.use("/", editActivity);
+
 const logOut = require("./routes/auth/logout.routes");
 app.use("/", logOut);
 

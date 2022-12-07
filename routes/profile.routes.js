@@ -8,10 +8,11 @@ const { isLoggedIn, isLoggedOut } = require("../middleware/route-guard");
 
 router.get('/profile', isLoggedIn, (req, res, next) => {
   User.findById(req.session.currentUser)
-    .populate('posts') // 
+    .populate('posts')
     .then(dbPosts => {
       //console.log("Posts from the DB: ", dbPosts.posts);
       res.render('users/profile', { posts: dbPosts.posts });
+      console.log(req.session.currentUser.username)
     })
     .catch(err => {
       console.log(`Err while getting the posts from the DB: ${err}`);

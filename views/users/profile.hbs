@@ -187,12 +187,12 @@
             d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
           ></path>
         </svg>
-
         Create
       </button>
     </div>
     <div class="feeds flex flex-col p-4 w-full h-screen overflow-y-auto">
       <!--Single Feed -->
+      {{> createActivity}}
       {{#each posts}}
         <div class="singelfeed bg-white shadow-md p-4 rounded-md mb-4">
           <div class="flex gap-4 mb-4">

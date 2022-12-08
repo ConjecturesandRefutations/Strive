@@ -32,7 +32,7 @@ const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
 
 const myActivitiesRoutes = require("./routes/myActivities.routes");
-app.use("/myactivities", myActivitiesRoutes);
+app.use("/", myActivitiesRoutes);
 
 const registerRoutes = require("./routes/auth/register.routes");
 app.use("/", registerRoutes);

@@ -5,13 +5,15 @@ const userSchema = new Schema(
   {
     name: String,
     age: Number,
+    avatar: { type: String, default: "images/user.png" },
+    location: String,
+    dateOfBirth: String,
     favoriteActivites: {
       type: String,
       enum: ["run", "bike", "swim", "walk", "other"],
     },
     shoes: [String],
     bikes: [String],
-    profileImage: String,
     posts: [{ type: Schema.Types.ObjectId, ref: "Post" }],
     username: {
       type: String,

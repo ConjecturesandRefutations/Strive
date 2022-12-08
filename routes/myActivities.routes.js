@@ -43,4 +43,12 @@ router.post('/myactivities/:postId/edit', (req, res, next) => {
 });
  
 
+router.post('/myActivities/:postId/delete', (req, res, next) => {
+  const { postId } = req.params;
+
+  Post.findByIdAndDelete(postId)
+    .then(() => res.redirect('/myActivities'))
+    .catch(error => next(error));
+});
+
 module.exports = router;

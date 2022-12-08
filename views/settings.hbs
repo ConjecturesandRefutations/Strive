@@ -1,13 +1,15 @@
 <h2>Settings Screen</h2>
 <a href="/profile">Profile</a>
 <form action="/settings" method="post" enctype="multipart/form-data">
+  <label for="username">Username</label>
+  <input type="text" name="username" value="{{username}}" />
   <label for="email">email</label>
-  <input type="email" name="email" />
+  <input type="email" name="email" value="{{email}}" />
   <label for="location">Location</label>
-  <input type="text" name="location" />
+  <input type="text" name="location" value="{{location}}" />
   <label for="birthday">Birthday</label>
-  <input type="date" name="birthday" />
+  <input type="date" name="birthday" value="{{birthday}}" />
   <label for="avatar">Avatar</label>
-  <input type="file" name="avatar" />
-  <button type="submit"></button>
+  <input type="file" name="avatar" value="" />
+  <button type="submit">Submit</button>
 </form>

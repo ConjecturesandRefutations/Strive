@@ -14,6 +14,7 @@ router.get("/profile", isLoggedIn, (req, res, next) => {
     .populate("posts") //
     .then((user) => {
       //console.log("Posts from the DB: ", dbPosts.posts);
+      console.log(user.posts);
       if (user.posts.length === 0) {
         res.render("users/profile", {
           posts: user.posts,

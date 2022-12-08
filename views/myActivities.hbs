@@ -1,7 +1,8 @@
 <h2>My Activities</h2>
 <br>
 {{#each posts}}
- <h3>{{title}} <button><a href="/edit">Edit</a></button>
-    <button><a href="/delete">Delete</a></button></h3>
- 
+ <h3>{{title}}   
+ <button><a href="/myActivities/{{_id}}/edit">Edit</a></button>
+ <button><a href="/myActivities/{{_id}}/delete" method="POST">Delete</a></button>
+ </h3>
 {{/each}}

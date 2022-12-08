@@ -11,6 +11,7 @@ const durations = [];
 
 router.get("/profile", isLoggedIn, (req, res, next) => {
   User.findById(req.session.currentUser)
+
     .populate("posts") //
     .then((user) => {
       //console.log("Posts from the DB: ", dbPosts.posts);
@@ -50,6 +51,7 @@ router.get("/profile", isLoggedIn, (req, res, next) => {
         });
         console.log(user.username);
       }
+
     })
     .catch((err) => {
       console.log(`Err while getting the posts from the DB: ${err}`);

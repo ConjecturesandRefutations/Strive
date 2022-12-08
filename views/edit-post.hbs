@@ -1,0 +1,25 @@
+<h2>Edit the post: {{post.title}}</h2>
+ 
+<form action="/myActivities/{{post._id}}/edit" method="post">
+  <label> Title:
+    <input type="text" name="title" value="{{post.title}}" />
+  </label>
+ 
+  <label> Distance:
+    <input type="number" name="distance" value="{{post.distance}}" />
+  </label>
+ 
+  <label> Duration:
+    <input type="number" name="duration" value="{{post.duration}}">
+  </label>
+ 
+  <label> Elevation:
+    <input type="number" name="elevation" min="0" max="10000" value="{{post.elevation}}" />
+  </label>
+
+    <label> Description:
+    <textarea name="description" cols="30" rows="4">{{post.description}}</textarea>
+  </label>
+ 
+  <button>Save changes</button>
+</form>

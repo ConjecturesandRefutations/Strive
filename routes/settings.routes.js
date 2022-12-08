@@ -17,6 +17,14 @@ router.get("/settings", isLoggedIn, (req, res) => {
 router.post("/settings", fileUploader.single("avatar"), (req, res) => {
   const { username, email, location, birthday, existingAvatar } = req.body;
 
+  let imageUrl;
+
+  if (req.file) {
+    imageUrl = req.file.path;
+  } else {
+    imageUrl = existingAvatar;
+  }
+
   User.findOneAndUpdate(
     req.session.currentUser.username,
     {
@@ -24,7 +32,7 @@ router.post("/settings", fileUploader.single("avatar"), (req, res) => {
       email,
       location,
       birthday,
-      avatar: req.file.path,
+      avatar: imageUrl,
     },
     { new: true }
   )

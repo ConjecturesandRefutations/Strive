@@ -46,6 +46,9 @@ app.use("/", loginRoutes);
 const profileView = require("./routes/profile.routes");
 app.use("/", profileView);
 
+const settings = require("./routes/settings.routes");
+app.use("/", settings);
+
 const logOut = require("./routes/auth/logout.routes");
 app.use("/", logOut);
 

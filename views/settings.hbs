@@ -1,0 +1,14 @@
+<h2>Settings Screen</h2>
+<a href="/profile">Profile</a>
+<form action="/settings" method="post" enctype="multipart/form-data">
+  <label for="location">Location</label>
+  <input type="text" name="location" value="{{location}}" />
+  <label for="birthday">Birthday</label>
+  <input type="date" name="birthday" value="{{dateOfBirth}}" />
+  <label for="avatar">Avatar</label>
+  <img src="{{avatar}}" alt="" class="w-12" />
+  <input type="file" name="avatar" value="" />
+  <label for="description">Description</abel>
+  <textarea name="description" id="" cols="30" rows="10">{{description}}</textarea>
+  <button type="submit">Submit</button>
+</form>

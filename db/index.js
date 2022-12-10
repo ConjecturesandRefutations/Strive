@@ -10,6 +10,8 @@ const password = encodeURIComponent(process.env.MONGODB_PASSWORD)
 const MONGO_URI = `mongodb+srv://Conjectures:${password}@cluster0.ieaqtvk.mongodb.net/Strive?retryWrites=true&w=majority` ||
   "mongodb://127.0.0.1:27017/Strive";
 
+  mongoose.set('strictQuery', true);
+
 mongoose
   .connect(MONGO_URI)
   .then((x) => {

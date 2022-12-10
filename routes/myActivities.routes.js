@@ -13,7 +13,7 @@ router.get('/myactivities', isLoggedIn, (req, res, next) => {
     .populate('posts') // 
     .then(dbPosts => {
       //console.log("Posts from the DB: ", dbPosts.posts);
-      res.render('myactivities', { posts: dbPosts.posts });
+      res.render('activitieslist', { posts: dbPosts.posts });
     })
     .catch(err => {
       console.log(`Err while getting the posts from the DB: ${err}`);

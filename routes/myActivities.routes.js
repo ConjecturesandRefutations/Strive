@@ -8,6 +8,7 @@ const { isLoggedIn, isLoggedOut } = require("../middleware/route-guard");
 
 /* GET my activities page */
 router.get('/myactivities', isLoggedIn, (req, res, next) => {
+  console.log('myactivites has been reached')
   User.findById(req.session.currentUser)
     .populate('posts') // 
     .then(dbPosts => {

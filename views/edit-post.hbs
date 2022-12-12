@@ -1,25 +1,75 @@
-<h2>Edit the post: {{post.title}}</h2>
- 
-<form action="/myActivities/{{post._id}}/edit" method="post">
-  <label> Title:
-    <input type="text" name="title" value="{{post.title}}" />
-  </label>
- 
-  <label> Distance:
-    <input type="number" name="distance" value="{{post.distance}}" />
-  </label>
- 
-  <label> Duration:
-    <input type="number" name="duration" value="{{post.duration}}">
-  </label>
- 
-  <label> Elevation:
-    <input type="number" name="elevation" min="0" max="10000" value="{{post.elevation}}" />
-  </label>
+<div class="flex flex-col w-full justify-center items-center">
+  <div class="header bg-black flex w-full h-52">
+    <div
+      class="absolute left-4 top-2 text-2xl text-white font-bold uppercase tracking-widest"
+    >
+      Strive
+    </div>
+    <img
+      class="w-full object-cover top-0"
+      src="https://images.unsplash.com/photo-1532444458054-01a7dd3e9fca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=941&q=80"
+      alt=""
+    />
+  </div>
 
-    <label> Description:
-    <textarea name="description" cols="30" rows="4">{{post.description}}</textarea>
-  </label>
- 
-  <button>Save changes</button>
-</form>
+  <div>
+    <h2 class="self-start font-bold text-custom-blue-500 text-2xl mt-32 mb-4">
+      Settings
+    </h2>
+
+    <form action="/myActivities/{{post._id}}/edit" method="post">
+      <label for="title" class="block text-sm font-medium text-gray-700">
+        Title:
+      </label>
+      <input
+        type="text"
+        name="title"
+        value="{{post.title}}"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-custom-blue-500 focus:ring-custom-blue-500 sm:text-sm mb-4"
+      />
+
+      <label for="distance" class="block text-sm font-medium text-gray-700">
+        Distance:</label>
+      <input
+        type="number"
+        name="distance"
+        value="{{post.distance}}"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-custom-blue-500 focus:ring-custom-blue-500 sm:text-sm mb-4"
+      />
+
+      <label for="duration" class="block text-sm font-medium text-gray-700">
+        Duration:
+      </label>
+      <input
+        type="number"
+        name="duration"
+        value="{{post.duration}}"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-custom-blue-500 focus:ring-custom-blue-500 sm:text-sm mb-4"
+      />
+
+      <label for="elevation" class="block text-sm font-medium text-gray-700">
+        Elevation:</label>
+      <input
+        type="number"
+        name="elevation"
+        min="0"
+        max="10000"
+        value="{{post.elevation}}"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-custom-blue-500 focus:ring-custom-blue-500 sm:text-sm mb-4"
+      />
+
+      <label for="description" class="block text-sm font-medium text-gray-700">
+        Description:</label>
+      <textarea
+        name="description"
+        cols="30"
+        rows="4"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-custom-blue-500 focus:ring-custom-blue-500 sm:text-sm"
+      >{{post.description}}</textarea>
+
+      <button
+        class="inline-flex justify-center rounded-md border mt-4 border-transparent bg-custom-blue-500 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-custom-blue-600 focus:outline-none focus:ring-2 focus:ring-custom-blue-500 focus:ring-offset-2"
+      >Save changes</button>
+    </form>
+  </div>
+</div>

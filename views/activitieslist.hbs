@@ -1,10 +1,38 @@
-<h2>My Activities</h2>
-<br>
-{{#each posts}}
- <h3>{{title}} <button><a href="/myActivities/{{_id}}/edit">Edit</a></button>
- <form action="/myActivities/{{_id}}/delete" method="POST">
-      <button>Delete</button>
-    </form>
-{{/each}}
+<div class="flex flex-col w-full justify-center items-center">
+  <div class="header bg-black flex w-full h-52">
+    <div
+      class="absolute left-4 top-2 text-2xl text-white font-bold uppercase tracking-widest"
+    >
+      Strive
+    </div>
+    <img
+      class="w-full object-cover top-0"
+      src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+      alt=""
+    />
+  </div>
 
-<button><a href="/profile">To Profile Page</a></button></h3>
+  <div class="w-98">
+    <h2 class="self-start font-bold text-custom-blue-500 text-2xl mt-32">
+      My Activities
+    </h2>
+    {{#each posts}}
+      <div class="flex justify-between">
+        <div>{{title}}</div>
+        <div class="flex gap-4">
+          <a
+            href="/myActivities/{{_id}}/edit"
+            class="text-custom-blue-500"
+          >Edit</a>
+          <a
+            class="text-custom-blue-500"
+            href="/myActivities/{{_id}}/delete"
+          >Delete</a>
+        </div>
+      </div>
+
+    {{/each}}
+  </div>
+
+  <a href="/profile" class="p-4 text-custom-blue-500"> Back</a>
+</div>

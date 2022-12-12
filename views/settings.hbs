@@ -1,14 +1,67 @@
-<h2>Settings Screen</h2>
-<a href="/profile">Profile</a>
+<div class="flex flex-col w-full justify-center items-center">
+  <div class="header bg-black flex w-full h-52">
+    <div
+      class="absolute left-4 top-2 text-2xl text-white font-bold uppercase tracking-widest"
+    >
+      Strive
+    </div>
+    <img
+      class="w-full object-cover top-0"
+      src="/images/ciprian-pardau-j8fVoo3i8xk-unsplash.jpg"
+      alt=""
+    />
+  </div>
+
+  <div>
+    <h2 class="self-start font-bold text-custom-blue-500 text-2xl mt-32">
+      Profile
+    </h2>
 <form action="/settings" method="post" enctype="multipart/form-data">
-  <label for="location">Location</label>
-  <input type="text" name="location" value="{{location}}" />
-  <label for="birthday">Birthday</label>
-  <input type="date" name="birthday" />
-  <label for="avatar">Avatar</label>
-  <img src="{{avatar}}" alt="" class="w-12 rounded-full" />
-  <input type="file" name="avatar" value="" />
-  <label for="description">Description</abel>
-  <textarea name="description" id="" cols="30" rows="10">{{description}}</textarea>
-  <button type="submit">Submit</button>
-</form>
+          <label for="location" class="block text-sm font-medium text-gray-700"
+            >Location</label
+          >
+          <input
+            type="text"
+            name="location"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-custom-blue-500 focus:ring-custom-blue-500 sm:text-sm"
+            value="{{location}}"
+          />
+          <label
+            for="birthday"
+            class="mt-4 block text-sm font-medium text-gray-700"
+            >Birthday</label
+          >
+
+          <input
+            type="date"
+            name="birthday"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-custom-blue-500 focus:ring-custom-blue-500 sm:text-sm mb-4"
+            value=""
+          />
+            <img src="{{avatar}}" alt="" class="w-12 rounded-full" />
+          <label
+            for="avatar"
+            class="mt-4 block text-sm font-medium text-gray-700"
+            >Password</label
+          >
+
+          <input
+            type="file"
+            name="avatar"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-custom-blue-500 focus:ring-custom-blue-500 sm:text-sm"
+          />
+
+          <label for="description" class="mt-4 block text-sm font-medium text-gray-700">Description</abel>
+            <textarea name="description" id="" cols="30" rows="10" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-custom-blue-500 focus:ring-custom-blue-500 sm:text-sm">{{description}}</textarea>
+          
+            
+            <button
+              type="submit"
+              class="inline-flex justify-center rounded-md border mt-4 border-transparent bg-custom-blue-500 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-custom-blue-600 focus:outline-none focus:ring-2 focus:ring-custom-blue-500 focus:ring-offset-2"
+            >
+              Update
+            </button>
+          
+        </form>
+        </div>
+        </div>

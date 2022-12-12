@@ -32,7 +32,7 @@ const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
 
 const myActivitiesRoutes = require("./routes/myActivities.routes");
-app.use("/myactivities", myActivitiesRoutes);
+app.use("/", myActivitiesRoutes);
 
 const registerRoutes = require("./routes/auth/register.routes");
 app.use("/", registerRoutes);
@@ -46,8 +46,10 @@ app.use("/", loginRoutes);
 const profileView = require("./routes/profile.routes");
 app.use("/", profileView);
 
+
 const settings = require("./routes/settings.routes");
 app.use("/", settings);
+
 
 const logOut = require("./routes/auth/logout.routes");
 app.use("/", logOut);

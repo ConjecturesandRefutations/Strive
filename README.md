@@ -25,7 +25,7 @@ routes
 middleware
 models: Users and Posts
 
-Task
+Tasks
 ---------------
 Create file structure.
 Add user and post models.

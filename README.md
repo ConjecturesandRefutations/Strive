@@ -7,10 +7,10 @@ Strive is a full-stack web application based on Node, Express and MongoDB. It is
 
 MVP (DOM - CANVAS)
 ----------------
-Users can sign-up/sign-in/log-out
-Users can add activities
-Users can edit activities
-Users can delete activities
+Users can sign-up/sign-in/log-out.
+Users can add activities.
+Users can edit activities.
+Users can delete activities.
 
 Backlog
 ----------------

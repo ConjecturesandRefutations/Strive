@@ -12,10 +12,17 @@
     />
   </div>
 
+ 
   <div>
     <h2 class="self-start font-bold text-custom-blue-500 text-2xl mt-32">
       Register
     </h2>
+
+ {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+    {{/if}}
+
+
     <form action="/register" method="POST" class="mt-4 w-96">
       <label
         for="username"
@@ -65,3 +72,4 @@
     </form>
   </div>
 </div>
+

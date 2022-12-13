@@ -4,6 +4,7 @@ const User = require("../../models/User.model");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
+
 const { isLoggedIn, isLoggedOut } = require("../../middleware/route-guard");
 
 /* GET register page */
@@ -19,7 +20,7 @@ router.post("/register", isLoggedOut, async (req, res, next) => {
  // make sure users fill all mandatory fields:
 if (!username || !email || !password) {
   console.log('missing details')
-  res.render("auth/register", {
+  res.status(500).render("auth/register", {
     errorMessage: "All fields are mandatory. Please provide your username, email and password."
   });
   return;

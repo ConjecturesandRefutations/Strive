@@ -21,18 +21,18 @@
         <div>{{title}}</div>
         <div class="flex gap-4">
           <a
-            href="/myActivities/{{_id}}/edit"
+            href="/activitieslist/{{_id}}/edit"
             class="text-custom-blue-500"
           >Edit</a>
-          <a
-            class="text-custom-blue-500"
-            href="/myActivities/{{_id}}/delete"
-          >Delete</a>
+          <form action="/activitieslist/{{_id}}/delete" method="POST" class="text-custom-blue-500">
+      <button>Delete</button>
+    </form>
         </div>
       </div>
-
     {{/each}}
   </div>
 
   <a href="/profile" class="p-4 text-custom-blue-500"> Back</a>
 </div>
+
+ 

@@ -1207,3 +1207,8 @@ select {
     line-height: 1.25rem;
   }
 }
+
+.error{
+  color: red;
+  max-width: 450px
+}

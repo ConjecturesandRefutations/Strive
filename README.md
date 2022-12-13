@@ -3,7 +3,7 @@ STRIVE
 
 Description
 ---------------
-Strive is a full-stack web application based on Node, Express and MongoDB. It is similar to the popular website 'Strava' in which users upload their activities for their own personal log and for other users to see. Inputs such as 'distance', 'duration', 'elevation gain', and a general description, can be added for each activity. The user has the ability to edit and delete any activity. Strive also includes authentication and authorisation (i.e sign-up, sign-in, log-out functionality). Finally, the user can personalise their profile by adding a picture, their own tagline, and their birth-date.
+Strive is a full-stack web application built with Node, Express and MongoDB. It is similar to the popular website 'Strava' in which users upload their activities for their own personal log and for other users to see. Inputs such as 'distance', 'duration', 'elevation gain', and a general description, can be added for each activity. The user has the ability to edit and delete any activity. Strive also includes authentication and authorisation (i.e sign-up, sign-in, log-out functionality). Finally, the user can personalise their profile by adding a picture, their own tagline, and their birth-date.
 
 MVP (DOM - CANVAS)
 ----------------

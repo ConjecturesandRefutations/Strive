@@ -27,13 +27,13 @@ models: Users and Posts
 
 Task
 ---------------
-Create file structure
-Add user and post models
-Add public data (images, stylesheets)
-Add hbs pages
-Add error-handling
-Add routes for hbs pages
-Connect with MongoDB
+Create file structure.
+Add user and post models.
+Add public data (images, stylesheets).
+Add hbs pages.
+Add error-handling.
+Add routes for hbs pages.
+Connect with MongoDB.
 
 Links
 ---------------

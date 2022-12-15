@@ -7,7 +7,6 @@ const { isLoggedIn, isLoggedOut } = require("../middleware/route-guard");
 
 router.get("/settings", isLoggedIn, (req, res) => {
   const username = req.session.currentUser.username;
-  console.log(username);
 
   User.findOne({ username: username }).then((user) => {
     res.render("settings", user);
@@ -17,7 +16,6 @@ router.get("/settings", isLoggedIn, (req, res) => {
 router.post("/settings", fileUploader.single("avatar"), (req, res) => {
   const { location, birthday, avatar, description } = req.body;
   const userName = req.session.currentUser.username;
-  console.log(userName);
   let imageUrl;
 
   if (req.file) {

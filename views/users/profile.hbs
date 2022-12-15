@@ -16,9 +16,11 @@
           <span class="email text-sm text-gray-400">@{{user.username}}</span>
         </div>
       </div>
+      {{#if user.description}}
       <div class="description text-sm mb-4 text-slate-500">
-        🏃‍♂️ Daily running addict.
+        {{user.description}}
       </div>
+      {{/if}}
       <div class="Details flex flex-col text-sm gap-2">
         <div class="location flex items-center gap-1">
           {{#if user.location}}

@@ -8,6 +8,7 @@ const userSchema = new Schema(
     avatar: { type: String, default: "images/user.png" },
     location: String,
     birthday: String,
+    description: String,
     favoriteActivites: {
       type: String,
       enum: ["run", "bike", "swim", "walk", "other"],

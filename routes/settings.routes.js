@@ -15,7 +15,7 @@ router.get("/settings", isLoggedIn, (req, res) => {
 });
 
 router.post("/settings", fileUploader.single("avatar"), (req, res) => {
-  const { location, birthday, avatar } = req.body;
+  const { location, birthday, avatar, description } = req.body;
   const userName = req.session.currentUser.username;
   console.log(userName);
   let imageUrl;
@@ -32,6 +32,7 @@ router.post("/settings", fileUploader.single("avatar"), (req, res) => {
       location: location,
       birthday: birthday,
       avatar: imageUrl,
+      description: description,
     },
     { new: true }
   )
